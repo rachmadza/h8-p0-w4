@@ -22,6 +22,7 @@ function digitPerkalianMinimum(angka) {
         }
       }
     }
+    arrSlice
     return digit.length;
   }
   

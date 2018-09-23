@@ -6,10 +6,10 @@ function angkaPrima(angka) {
         return false
     } else {
         for (var i = 2; i < angka; i++) {
-            if (angka % i === 0) {
-                prima = false;
-            }
+        if (angka % i === 0) {
+            prima = angka;
         }
+    }
     }
 
     

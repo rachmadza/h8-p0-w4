@@ -8,11 +8,49 @@ Contoh jika arr inputan adalah [['Platinum', 'Fox', 'female', 1995], ['John', 'D
  */
 
 function changeMe(arr) {
-    // you can only write your code here!
+  // you can only write your code here!
+
+  var avenger = {}
+
+  var result = ''
+
+  if (arr.length == 0) {
+    // console.log("");
+    return '""'
+  } else {
+    for (var i = 0; i < arr.length; i++) {
+
+      var namaDepan = arr[i][0]
+      var namaBelakang = arr[i][1]
+      var jk = arr[i][2]
+      var umur = 2018 - arr[i][3]
+      var nama = [namaDepan + " " + namaBelakang]
+       
+
+      if (isNaN(umur) || arr[i][3]>=2018) {
+        umur =  'Invalid Birth Year'
+      }
+
+      if (avenger.nama === undefined) {
+        avenger[(i+1)+'. '+nama] =  {
+          firstName: namaDepan,
+          lastName: namaBelakang,
+          gender: jk,
+          age: umur
+        }
+
+      }
+
+    }
+
   }
-  
-  // TEST CASES
-  changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 1. Christ Evans:
+
+   return avenger
+}
+
+// TEST CASES
+console.log(changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']])); 
+  // 1. Christ Evans:
   // { firstName: 'Christ',
   //   lastName: 'Evans',
   //   gender: 'Male',
@@ -22,4 +60,4 @@ function changeMe(arr) {
   //   lastName: 'Downey',
   //   gender: 'Male',
   //   age: 'Invalid Birth Year' }
-  changeMe([]); // ""
+  console.log(changeMe([])); // ""

@@ -13,6 +13,8 @@
 
 function cariModus(arr) {
     // you can only write your code here!
+
+    // console.log(cariModus([10, 4, 5, 2, 4])); // 4
     var tampil = 0
     var mod = 0
 
