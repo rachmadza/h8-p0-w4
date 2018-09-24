@@ -16,7 +16,8 @@ function changeMe(arr) {
 
   if (arr.length == 0) {
     // console.log("");
-    return '""'
+    console.log('""');
+    
   } else {
     for (var i = 0; i < arr.length; i++) {
 
@@ -32,7 +33,8 @@ function changeMe(arr) {
       }
 
       if (avenger.nama === undefined) {
-        avenger[(i+1)+'. '+nama] =  {
+        // avenger[(i+1)+'. '+nama] =  {
+          avenger[nama] =  {
           firstName: namaDepan,
           lastName: namaBelakang,
           gender: jk,
@@ -40,16 +42,21 @@ function changeMe(arr) {
         }
 
       }
-
+      console.log((i+1)+ '. ' +[nama]+ ': ');
+      console.log(avenger[nama]);
+      
     }
 
   }
 
-   return avenger
+  //  return avenger
+  // console.log(avenger);
+  
 }
 
 // TEST CASES
-console.log(changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']])); 
+  
+changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); 
   // 1. Christ Evans:
   // { firstName: 'Christ',
   //   lastName: 'Evans',
@@ -60,4 +67,4 @@ console.log(changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'M
   //   lastName: 'Downey',
   //   gender: 'Male',
   //   age: 'Invalid Birth Year' }
-  console.log(changeMe([])); // ""
+  changeMe([]); // ""
