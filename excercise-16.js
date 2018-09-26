@@ -15,8 +15,21 @@ Contoh:
  */
 
 function makanTerusRekursif(waktu) {
-    // you can only write your code here!
+  // you can only write your code here!
+  var sisa;
+  var makan = 0;
+
+  if (waktu === 0) {
+    return 0;
+  } else if (waktu < 15) {
+    return 1;
+  } else {
+    makan++;
+    sisa = waktu - 15;
   }
+
+  return makan + makanTerusRekursif(sisa);
+}
   
   // TEST CASES
   console.log(makanTerusRekursif(66)); // 5

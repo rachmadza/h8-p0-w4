@@ -7,8 +7,18 @@ Contoh:
  */
 
 function kaliTerusRekursif(angka) {
-    // you can only write your code here!
+  if (angka.toString().length === 1) {
+    return angka;
+  } else {
+    var perkalian = Number(angka.toString().substring(0, 1));
+    
+    for (var i = 1; i < angka.toString().length; i++) {
+      perkalian = perkalian * Number(angka.toString()[i]);
+    }  
+    
+    return kaliTerusRekursif(perkalian);
   }
+}
   
   // TEST CASES
   console.log(kaliTerusRekursif(66)); // 8

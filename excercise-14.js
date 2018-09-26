@@ -8,8 +8,36 @@ function sorting(arrNumber) {
     // code di sini
   }
   
+  function sorting(arrNumber) {
+    var sorted = 0
+    for (var j = 1; j > sorted; j++) {
+        sorted = j + 5
+        for (var i = 0; i < arrNumber.length; i++) {
+            if (arrNumber[i] > arrNumber[i + 1]) {
+                var temp = arrNumber[i]
+                arrNumber[i] = arrNumber[i + 1]
+                arrNumber[i + 1] = temp
+                sorted = 0
+            }
+        }
+    }
+    return arrNumber
+  }
+  
   function getTotal(arrNumber) {
-    // code di sini
+    var listSort = sorting(arrNumber)
+    var terbesar = listSort[listSort.length - 1]
+    var temp = 0
+    for (var i = 0; i < listSort.length; i++) {
+        if (terbesar == listSort[i]) {
+            temp += 1
+        }
+    }
+    if (temp == 0) {
+        return ' '
+    }
+    else { return 'angka paling besar adalah ' + terbesar + ' dan jumlah kemunculanya sebanyak ' + temp + ' kali' }
+  
   }
   
   function mostFrequentLargestNumbers(arrNumber) {

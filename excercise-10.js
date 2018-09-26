@@ -4,9 +4,16 @@ Diberikan sebuah function checkAB(str) yang menerima satu parameter berupa strin
 
 function checkAB(str) {
   // you can only write your code here!
-  for (var i = 0; i <str.length; i++) {
-    if (str[i] === 'a' || str[i] === 'b') {
-      if (str[i+4] === 'b' || str[i+4] === 'a') {
+  for (var i = 0; i < str.length; i++) {
+    if (str[i] === 'a') {
+      if (str[i + 4] === 'b') {
+        return true
+      } else {
+        return false
+      }
+    }
+    else if (str[i] === 'b') {
+      if (str[i + 4] === 'a') {
         return true
       } else {
         return false

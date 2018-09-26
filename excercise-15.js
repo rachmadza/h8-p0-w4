@@ -16,25 +16,72 @@ Semua manipulasi string (changeVocals, reverseWord, setLowerUpperCase, removeSpa
 
  */
 
-function changeVocals (str) {
-    //code di sini
+function changeVocals(str) {
+  //code di sini
+  var arr = str.split('')
+  for (var i = 0; i < arr.length; i++) {
+      switch (arr[i]) {
+          case 'a': { arr[i] = 'b'; break; }
+          case 'i': { arr[i] = 'g'; break; }
+          case 'u': { arr[i] = 'v'; break; }
+          case 'e': { arr[i] = 'f'; break; }
+          case 'o': { arr[i] = 'p'; break; }
+
+          case 'A': { arr[i] = 'B'; break; }
+          case 'I': { arr[i] = 'G'; break; }
+          case 'U': { arr[i] = 'V'; break; }
+          case 'O': { arr[i] = 'P'; break; }
+          case 'E': { arr[i] = 'F'; break; }
+      }
   }
-  
-  function reverseWord (str) {
-    //code di sini
+  var result = arr.join('')
+  return result
+}
+
+function reverseWord(str) {
+  //code di sini
+  var reverse = ''
+  for (var i = str.length - 1; i >= 0; i--) {
+      reverse = reverse + str[i]
+  } return reverse
+}
+
+function setLowerUpperCase(str) {
+  //code di sini
+  var result = []
+  for (var i = 0; i < str.length; i++) {
+      var upperCase = str[i].toUpperCase()
+      if (str[i] === upperCase) {
+          result.push(str[i].toLowerCase())
+      }
+      else {
+          result.push(str[i].toUpperCase())
+      }
+  }return result.join('')
+}
+
+function removeSpaces(str) {
+  //code di sini
+  var arr = str.split('')
+  for (var i = 0; i < arr.length; i++) {
+      if (arr[i] === ' ') {
+          arr.splice(i, 1)
+      }
+  }var result = arr.join('')
+  return result
+}
+
+function passwordGenerator(name) {
+  //code di sini
+  if (name.length < 5) {
+      return 'Minimal karakter yang diinputkan adalah 5 karakter'
   }
-  
-  function setLowerUpperCase (str) {
-    //code di sini
-  }
-  
-  function removeSpaces (str) {
-    //code di sini
-  }
-  
-  function passwordGenerator (name) {
-    //code di sini
-  }
+  var result = changeVocals(name)
+  result = reverseWord(result)
+  result = setLowerUpperCase(result)
+  result = removeSpaces(result)
+  return result
+}
   
   console.log(passwordGenerator('Sergei Dragunov')); // 'VPNVGBRdJFGRFs'
   console.log(passwordGenerator('Dimitri Wahyudiputra')); // 'BRTVPJDVYHBwJRTJMJd'
